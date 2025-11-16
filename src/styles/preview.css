@@ -1,0 +1,446 @@
+.preview-pages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.preview-page {
+  width: 210mm; /* A4 width */
+  min-height: 297mm; /* A4 height - minimum height */
+  max-width: 794px; /* fallback for browsers that don't support mm */
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.15);
+  padding: 2.8rem 3.5rem 2.8rem 3rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+  position: relative;
+  max-height: none; /* allow page to grow */
+}
+
+/* If you ever render multiple .preview-page divs, this helps split them */
+.preview-page:not(:last-child) {
+  margin-bottom: 1.5rem;
+  page-break-after: always;
+  break-after: page;
+}
+
+.preview-page:last-child {
+  page-break-after: auto;
+  break-after: auto;
+}
+
+/* Header */
+.preview-header {
+  display: grid;
+  grid-template-columns: 1.3fr auto 1fr;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+}
+
+.preview-name-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-name {
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin: 0 0 0.35rem 0;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--color-primary);
+}
+
+.preview-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 0 0 0.65rem 0;
+  line-height: 1.4;
+  letter-spacing: 0.015em;
+  color: var(--color-accent);
+}
+
+.preview-summary {
+  font-size: 0.92rem;
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.6;
+  max-width: 92%;
+  padding-right: 0.5rem;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}
+
+.preview-header-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.preview-picture-container {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent, #2F8F83) 0%, var(--color-primary, #283A5D) 100%);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(47, 143, 131, 0.25);
+}
+
+.preview-picture {
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  display: block;
+  box-sizing: border-box;
+}
+
+.preview-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.preview-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  text-align: right;
+  color: var(--color-text);
+  width: 100%;
+  line-height: 1.45;
+}
+
+.preview-contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.preview-contact-icon {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.preview-contact-item a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.preview-contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* Content Layout - Two Columns */
+.preview-content-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.preview-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding-right: 0.5rem;
+}
+
+.preview-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Sections */
+.preview-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.preview-section-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.preview-section-accent {
+  width: 5px;
+  height: 20px;
+  display: inline-block;
+  flex-shrink: 0;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+/* Blocks */
+.preview-block {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  padding-right: 0.3rem;
+}
+
+.preview-block-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.preview-block-role {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+
+.preview-block-sub {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  align-items: center;
+  line-height: 1.4;
+}
+
+.preview-block-company {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.preview-block-meta {
+  font-size: 0.8rem;
+}
+
+.preview-block-description {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin: 0.35rem 0;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.preview-block-dates {
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 0.15rem;
+}
+
+.preview-block-dates-location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.preview-block-location {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.preview-block-contact {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.preview-achievement-list {
+  margin: 0.4rem 0 0 0;
+  padding-left: 1.2rem;
+  list-style: none;
+}
+
+.preview-achievement-list li {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.35;
+  margin-bottom: 0.15rem;
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.preview-achievement-list li::before {
+  content: "▸";
+  position: absolute;
+  left: -1rem;
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.preview-placeholder {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Skills */
+.preview-skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.preview-skill-button {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.45rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #4b5563;
+  background-color: #e8eaf6;
+  border: none;
+  cursor: default;
+  letter-spacing: 0.01em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Projects */
+.preview-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.preview-project-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.preview-project-name {
+  font-size: 0.87rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+}
+
+.preview-project-period {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.preview-project-link {
+  font-size: 0.75rem;
+  color: var(--color-text);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.preview-project-link:hover {
+  text-decoration: underline;
+}
+
+/* Languages */
+.preview-languages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.preview-language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.preview-language-name {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.87rem;
+}
+
+.preview-language-level {
+  font-size: 0.77rem;
+  font-weight: 600;
+}
+
+/* Interests */
+.preview-interests-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.preview-interest-button {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.45rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #4b5563;
+  background-color: #f3f4f6;
+  border: none;
+  cursor: default;
+  letter-spacing: 0.01em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Print styles */
+@media print {
+  .preview-pages-container {
+    gap: 0;
+  }
+
+  .preview-page {
+    box-shadow: none; /* no big shadow on paper */
+    width: 210mm;
+    min-height: 297mm;
+    height: auto;
+    max-height: none; /* allow overflow to the next physical page */
+    border-radius: 0;
+    padding: 2.2rem 2.8rem 2.2rem 2.6rem;
+    margin: 0;
+    page-break-after: always;
+  }
+
+  .preview-page:last-child {
+    page-break-after: auto;
+  }
+
+  .preview-content-layout {
+    gap: 1.5rem;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}

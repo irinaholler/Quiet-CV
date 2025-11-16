@@ -1,0 +1,30 @@
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide editor when printing */
+  .editor-panel {
+    display: none;
+  }
+
+  /* Make preview full width for printing */
+  .preview-panel {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .preview-page {
+    box-shadow: none;
+    width: auto;
+    min-height: auto;
+    padding: 1.5cm;
+  }
+}
+
+/* Optional: set page size */
+@page {
+  size: A4;
+  margin: 1.5cm;
+}
