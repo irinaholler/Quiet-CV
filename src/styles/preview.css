@@ -7,24 +7,25 @@
 
 .preview-page {
   width: 210mm; /* A4 width */
-  min-height: 297mm; /* A4 height - minimum height */
-  max-width: 794px; /* fallback for browsers that don't support mm */
+  min-height: 297mm; /* A4 height */
+  max-width: 794px; /* fallback */
   background: #ffffff;
-  border-radius: 0.75rem;
-  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.15);
-  padding: 2.8rem 3.5rem 2.8rem 3rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+  padding: 2.3rem 2.7rem 2.3rem 2.5rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.4rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  line-height: 1.5;
+  line-height: 1.3;
   position: relative;
-  max-height: none; /* allow page to grow */
+  max-height: none;
+  overflow: visible; /* ✅ allow content to flow, no inner scroll */
 }
 
-/* If you ever render multiple .preview-page divs, this helps split them */
+/* Multiple pages (if you ever add them) */
 .preview-page:not(:last-child) {
   margin-bottom: 1.5rem;
   page-break-after: always;
@@ -36,14 +37,15 @@
   break-after: auto;
 }
 
-/* Header */
+/* Header ------------------------------------------------------- */
+
 .preview-header {
   display: grid;
   grid-template-columns: 1.3fr auto 1fr;
   align-items: flex-start;
-  gap: 2.5rem;
-  margin-bottom: 0.6rem;
-  padding-bottom: 1.2rem;
+  gap: 1.5rem;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.5rem;
   border-bottom: 2px solid rgba(0, 0, 0, 0.06);
 }
 
@@ -53,31 +55,29 @@
 }
 
 .preview-name {
-  font-size: 2.3rem;
-  font-weight: 800;
-  margin: 0 0 0.35rem 0;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
   color: var(--color-primary);
 }
 
 .preview-title {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 500;
-  margin: 0 0 0.65rem 0;
-  line-height: 1.4;
-  letter-spacing: 0.015em;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
   color: var(--color-accent);
 }
 
 .preview-summary {
-  font-size: 0.92rem;
+  font-size: 0.85rem;
   margin: 0;
   color: var(--color-text);
-  line-height: 1.6;
-  max-width: 92%;
+  line-height: 1.2;
+  max-width: 90%;
   padding-right: 0.5rem;
-  letter-spacing: 0.01em;
   font-weight: 400;
 }
 
@@ -89,22 +89,26 @@
 }
 
 .preview-picture-container {
-  width: 140px;
-  height: 140px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-accent, #2F8F83) 0%, var(--color-primary, #283A5D) 100%);
-  padding: 4px;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent, #2f8f83) 0%,
+    var(--color-primary, #283a5d) 100%
+  );
+  padding: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
   position: relative;
-  box-shadow: 0 4px 16px rgba(47, 143, 131, 0.25);
+  box-shadow: 0 3px 12px rgba(47, 143, 131, 0.25);
 }
 
 .preview-picture {
-  width: calc(100% - 8px);
-  height: calc(100% - 8px);
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
   border-radius: 50%;
   object-fit: cover;
   position: relative;
@@ -123,19 +127,20 @@
 .preview-contact {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  font-size: 0.82rem;
+  padding-top: 0.3rem;
+  gap: 0.35rem;
+  font-size: 0.8rem;
   text-align: right;
   color: var(--color-text);
   width: 100%;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 .preview-contact-item {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
 .preview-contact-icon {
@@ -152,11 +157,12 @@
   text-decoration: underline;
 }
 
-/* Content Layout - Two Columns */
+/* Layout: columns --------------------------------------------- */
+
 .preview-content-layout {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  gap: 2rem;
+  gap: 1.8rem;
   align-items: start;
   flex: 1;
   min-height: 0;
@@ -166,48 +172,50 @@
 .preview-main-content {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  padding-right: 0.5rem;
+  gap: 1.5rem;
+  padding-right: 0.4rem;
 }
 
 .preview-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 1.6rem;
 }
 
-/* Sections */
+/* Sections ----------------------------------------------------- */
+
 .preview-section {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.3rem;
 }
 
 .preview-section-title {
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
   color: var(--color-primary);
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.45rem 0;
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.6rem;
 }
 
 .preview-section-accent {
-  width: 5px;
-  height: 20px;
+  width: 4px;
+  height: 18px;
   display: inline-block;
   flex-shrink: 0;
   background: var(--color-accent);
   border-radius: 2px;
 }
 
-/* Blocks */
+/* Blocks ------------------------------------------------------- */
+
 .preview-block {
-  font-size: 0.85rem;
-  line-height: 1.45;
+  font-size: 0.84rem;
+  line-height: 1.4;
   padding-right: 0.3rem;
 }
 
@@ -215,25 +223,25 @@
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 
 .preview-block-role {
   color: var(--color-primary);
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: 0.9rem;
   letter-spacing: -0.01em;
 }
 
 .preview-block-sub {
-  font-size: 0.85rem;
+  font-size: 0.83rem;
   color: var(--color-text);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
   align-items: center;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .preview-block-company {
@@ -246,18 +254,17 @@
 }
 
 .preview-block-description {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: var(--color-text);
-  margin: 0.35rem 0;
+  margin: 0.3rem 0;
   font-style: italic;
-  line-height: 1.45;
+  line-height: 1.2;
 }
 
 .preview-block-dates {
-  font-size: 0.82rem;
-  font-weight: 600;
-  line-height: 1.4;
-  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 0.1rem;
 }
 
 .preview-block-dates-location {
@@ -265,9 +272,8 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
   font-weight: 500;
-  line-height: 1.4;
 }
 
 .preview-block-location {
@@ -277,20 +283,20 @@
 
 .preview-block-contact {
   font-size: 0.8rem;
-  margin-top: 0.3rem;
+  margin-top: 0.25rem;
 }
 
 .preview-achievement-list {
-  margin: 0.4rem 0 0 0;
+  margin: 0.35rem 0 0 0;
   padding-left: 1.2rem;
   list-style: none;
 }
 
 .preview-achievement-list li {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: var(--color-text);
-  line-height: 1.35;
-  margin-bottom: 0.15rem;
+  line-height: 1.12;
+  margin-bottom: 0.35rem;
   position: relative;
   padding-left: 0.5rem;
 }
@@ -310,28 +316,33 @@
   font-style: italic;
 }
 
-/* Skills */
+/* Skills ------------------------------------------------------- */
+
 .preview-skills-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.25rem 0.45rem;
+  align-items: flex-start;
 }
 
 .preview-skill-button {
-  display: inline-block;
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.45rem;
-  font-size: 0.76rem;
-  font-weight: 600;
-  color: #4b5563;
-  background-color: #e8eaf6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.28rem 0.7rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #374151;
+  background: rgba(148, 163, 184, 0.12);
   border: none;
   cursor: default;
   letter-spacing: 0.01em;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  line-height: 1.2;
 }
 
-/* Projects */
+/* Projects ----------------------------------------------------- */
+
 .preview-projects-list {
   display: flex;
   flex-direction: column;
@@ -345,7 +356,7 @@
 }
 
 .preview-project-name {
-  font-size: 0.87rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-primary);
   letter-spacing: -0.01em;
@@ -367,7 +378,8 @@
   text-decoration: underline;
 }
 
-/* Languages */
+/* Languages ---------------------------------------------------- */
+
 .preview-languages-list {
   display: flex;
   flex-direction: column;
@@ -384,51 +396,63 @@
 .preview-language-name {
   color: var(--color-primary);
   font-weight: 600;
-  font-size: 0.87rem;
+  font-size: 0.86rem;
 }
 
 .preview-language-level {
-  font-size: 0.77rem;
+  font-size: 0.76rem;
   font-weight: 600;
 }
 
-/* Interests */
+/* Interests ---------------------------------------------------- */
+
 .preview-interests-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .preview-interest-button {
   display: inline-block;
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.45rem;
-  font-size: 0.76rem;
-  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
   color: #4b5563;
   background-color: #f3f4f6;
   border: none;
   cursor: default;
   letter-spacing: 0.01em;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* Print styles */
+/* Print styles – clean A4, nice margins ------------------------ */
+
 @media print {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px; /* slightly smaller on paper */
+  }
+
   .preview-pages-container {
     gap: 0;
+    align-items: stretch;
+    overflow: visible !important;
   }
 
   .preview-page {
-    box-shadow: none; /* no big shadow on paper */
-    width: 210mm;
-    min-height: 297mm;
-    height: auto;
-    max-height: none; /* allow overflow to the next physical page */
+    box-shadow: none;
     border-radius: 0;
-    padding: 2.2rem 2.8rem 2.2rem 2.6rem;
+    width: 100%;
+    max-width: none;
+    min-height: auto;
+    height: auto;
     margin: 0;
+    padding: 0; /* content padding comes from @page margin */
     page-break-after: always;
+    page-break-inside: avoid;
+    overflow: visible !important;
   }
 
   .preview-page:last-child {
@@ -436,11 +460,44 @@
   }
 
   .preview-content-layout {
-    gap: 1.5rem;
+    gap: 1.4rem;
+  }
+
+  .preview-section-accent {
+    display: none;
+  }
+
+  .preview-section-title {
+    border-left: 3px solid var(--color-accent);
+    padding-left: 0.5rem;
+  }
+
+  .preview-skill-button {
+    padding: 0.2rem 0.5rem; /* even a touch tighter on paper */
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    /* background: none !important; no dependency on background graphics */
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-accent);
+    color: #374151;
+    background: rgba(148, 163, 184, 0.12);
+    cursor: default;
+    /* color: var(--color-primary); colored text prints reliably */
+  }
+
+  /* Interests: look like tags even without background graphics */
+  .preview-interest-button {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    background: none !important; /* kein reiner Hintergrund mehr */
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-accent); /* Rahmen druckt immer */
+    color: var(--color-primary); /* Text in deiner Akzentfarbe */
   }
 
   @page {
     size: A4;
-    margin: 0;
+    margin: 1cm 1.1cm 0.9cm 1.8cm; /* nice white frame */
   }
 }

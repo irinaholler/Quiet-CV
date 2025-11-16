@@ -53,8 +53,8 @@ const getInitialResume = (lang) => {
         role: isDe ? "Position" : "Job Title",
         company: isDe ? "Unternehmen" : "Company Name, ",
         location: isDe ? "Stadt" : "City",
-        start: "2017",
-        end: "2024",
+        start: "01/2017",
+        end: "05/2024",
         companyDescription: isDe ? "Kurze Beschreibung des Unternehmens." : "Brief description of the company.",
         achievements: isDe
           ? ["Aufgabe oder Erfolg 1", "Aufgabe oder Erfolg 2"]
@@ -68,8 +68,8 @@ const getInitialResume = (lang) => {
         degree: isDe ? "Abschluss / Ausbildung" : "Degree / Course",
         school: isDe ? "Schule / Hochschule" : "School / University",
         location: isDe ? "Stadt" : "City",
-        start: "2014",
-        end: "2017",
+        start: "11/2014",
+        end: "05/2017",
         description: "",
       },
     ],

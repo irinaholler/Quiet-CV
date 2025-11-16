@@ -16,7 +16,7 @@ body {
   flex-direction: column;
 }
 
-/* Intro Modal */
+/* Intro Modal -------------------------------------------------- */
 
 .intro-backdrop {
   position: fixed;
@@ -47,11 +47,9 @@ body {
   background: #ffffff;
   border-radius: 28px;
   padding: 0;
-  box-shadow: 
-    0 32px 96px rgba(15, 23, 42, 0.4),
+  box-shadow: 0 32px 96px rgba(15, 23, 42, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.9) inset;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: inherit;
   position: relative;
   animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
@@ -70,10 +68,12 @@ body {
 
 .intro-header {
   padding: 2.7rem 2.7rem 2rem;
-  background: linear-gradient(135deg, 
+  background: linear-gradient(
+    135deg,
     rgba(40, 58, 93, 0.05) 0%,
     rgba(47, 143, 131, 0.04) 50%,
-    rgba(40, 58, 93, 0.02) 100%);
+    rgba(40, 58, 93, 0.02) 100%
+  );
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   position: relative;
 }
@@ -84,16 +84,19 @@ body {
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, 
-    var(--color-primary, #283A5D) 0%,
-    var(--color-accent, #2F8F83) 50%,
-    var(--color-primary, #283A5D) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--color-primary, #283a5d) 0%,
+    var(--color-accent, #2f8f83) 50%,
+    var(--color-primary, #283a5d) 100%
+  );
   background-size: 200% 100%;
   animation: gradientShift 3s ease infinite;
 }
 
 @keyframes gradientShift {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
@@ -107,35 +110,8 @@ body {
   font-weight: 700;
   letter-spacing: -0.025em;
   color: var(--color-primary);
-  line-height: 1.25;
+  line-height: 1.2;
   flex: 1;
-}
-
-.intro-language-select {
-  padding: 0.4rem 0.45rem;
-  font-size: 0.675rem;
-  border: 2px solid var(--color-accent, #2F8F83);
-  border-radius: 0.5rem;
-  background: #ffffff;
-  cursor: pointer;
-  color: var(--color-primary);
-  font-weight: 600;
-  transition: all 0.25s ease;
-  min-width: 50px;
-  box-shadow: 0 2px 4px rgba(47, 143, 131, 0.1);
-}
-
-.intro-language-select:hover {
-  background: rgba(47, 143, 131, 0.06);
-  border-color: var(--color-primary);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(47, 143, 131, 0.15);
-}
-
-.intro-language-select:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 4px rgba(47, 143, 131, 0.2);
 }
 
 .intro-body {
@@ -176,66 +152,30 @@ body {
   text-align: center;
 }
 
-.intro-footer-text::before {
-  display: none;
-}
-
 .intro-button {
   width: calc(100% - 5.6rem);
   margin: 0 2.8rem 2.8rem;
   padding: 0.95rem 2.2rem;
-  border-radius: 0.65rem;
+  border-radius: 0.5rem;
   border: none;
   font-size: 0.98rem;
   font-weight: 600;
   cursor: pointer;
-  background: linear-gradient(135deg, 
-    var(--color-primary, #283A5D) 0%,
-    var(--color-accent, #2F8F83) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary, #283a5d) 0%,
+    var(--color-accent, #2f8f83) 100%
+  );
   color: #ffffff;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 
-    0 4px 14px rgba(40, 58, 93, 0.25),
+  box-shadow: 0 4px 14px rgba(40, 58, 93, 0.25),
     0 0 0 1px rgba(255, 255, 255, 0.1) inset;
   letter-spacing: 0.015em;
   position: relative;
   overflow: hidden;
 }
 
-.intro-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.2), 
-    transparent);
-  transition: left 0.5s ease;
-}
-
-.intro-button:hover::before {
-  left: 100%;
-}
-
-.intro-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 
-    0 8px 24px rgba(40, 58, 93, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
-  filter: brightness(1.08);
-}
-
-.intro-button:active {
-  transform: translateY(0);
-  box-shadow: 
-    0 2px 8px rgba(40, 58, 93, 0.2),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-}
-
-/* Header bar */
+/* Header bar --------------------------------------------------- */
 
 .app-header {
   display: flex;
@@ -264,13 +204,13 @@ body {
 }
 
 .app-title h1 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin: 0;
   color: var(--color-primary);
 }
 
 .app-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #777;
 }
 
@@ -288,8 +228,8 @@ body {
   gap: 0.4rem;
 }
 
-.language-label {
-  white-space: nowrap;
+.language-select {
+  min-width: 140px;
 }
 
 .theme-label select {
@@ -299,30 +239,16 @@ body {
   border-radius: 0.35rem;
   background: white;
   cursor: pointer;
-  transition: border-color 0.2s;
-}
-
-.theme-label select:hover {
-  border-color: var(--color-accent, #2f8f83);
-}
-
-.theme-label select:focus {
-  outline: none;
-  border-color: var(--color-accent, #2f8f83);
-  box-shadow: 0 0 0 2px rgba(47, 143, 131, 0.1);
-}
-
-.language-select {
-  min-width: 140px;
 }
 
 .print-button {
   border: none;
   background: var(--color-primary);
   color: #ffffff;
-  padding: 0.4rem 0.9rem;
+  padding: 0.5rem 0.9rem;
   font-size: 0.85rem;
-  border-radius: 999px;
+  font-weight: 600;
+  border-radius: 0.6rem;
   cursor: pointer;
 }
 
@@ -330,7 +256,7 @@ body {
   background: #1f2d47;
 }
 
-/* Layout */
+/* Layout ------------------------------------------------------- */
 
 .app-layout {
   display: grid;
@@ -357,6 +283,8 @@ body {
   overflow: auto;
 }
 
+/* Editor fields ------------------------------------------------ */
+
 .editor-root {
   display: flex;
   flex-direction: column;
@@ -365,13 +293,13 @@ body {
 
 .editor-heading {
   margin: 0 0 0.5rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--color-primary);
 }
 
 .editor-section {
   border-top: 1px solid #eceff4;
-  padding-top: 0.75rem;
+  padding-top: 0.7rem;
 }
 
 .editor-section h3 {
@@ -399,151 +327,6 @@ body {
   outline: none;
 }
 
-/* Elegant checkbox styling */
-.editor-toggle-label {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.85rem;
-  color: #6b7280;
-  cursor: pointer;
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  user-select: none;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-.editor-toggle-label:hover {
-  color: var(--color-primary, #283A5D);
-}
-
-.editor-toggle-checkbox {
-  width: 19px;
-  height: 19px;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: 2px solid #d1d5db;
-  border-radius: 5px;
-  background: #ffffff;
-  position: relative;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  flex-shrink: 0;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.editor-toggle-checkbox:hover {
-  border-color: var(--color-accent, #2F8F83);
-  background: rgba(47, 143, 131, 0.06);
-  box-shadow: 0 2px 4px rgba(47, 143, 131, 0.15);
-}
-
-.editor-toggle-checkbox:checked {
-  background: linear-gradient(135deg, var(--color-accent, #2F8F83) 0%, var(--color-primary, #283A5D) 100%);
-  border-color: var(--color-accent, #2F8F83);
-  box-shadow: 0 2px 6px rgba(47, 143, 131, 0.25);
-}
-
-.editor-toggle-checkbox:checked::after {
-  content: '';
-  position: absolute;
-  left: 6px;
-  top: 2px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 2.5px 2.5px 0;
-  transform: rotate(45deg);
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
-}
-
-.editor-toggle-checkbox:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(47, 143, 131, 0.12);
-}
-
-.editor-toggle-checkbox:checked:focus {
-  box-shadow: 
-    0 2px 6px rgba(47, 143, 131, 0.25),
-    0 0 0 4px rgba(47, 143, 131, 0.12);
-}
-
-.editor-section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.85rem;
-  gap: 1.25rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-.editor-section-header-left {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex: 1;
-}
-
-.editor-section-header-left h3 {
-  margin: 0;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--color-primary, #283A5D);
-}
-
-.editor-add-button {
-  padding: 0.45rem 0.85rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, var(--color-accent, #2F8F83) 0%, var(--color-primary, #283A5D) 100%);
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 
-    0 2px 4px rgba(47, 143, 131, 0.2),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-  letter-spacing: 0.01em;
-  position: relative;
-  overflow: hidden;
-}
-
-.editor-add-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.2), 
-    transparent);
-  transition: left 0.5s ease;
-}
-
-.editor-add-button:hover::before {
-  left: 100%;
-}
-
-.editor-add-button:hover {
-  background: linear-gradient(135deg, var(--color-primary, #283A5D) 0%, var(--color-accent, #2F8F83) 100%);
-  transform: translateY(-2px);
-  box-shadow: 
-    0 4px 12px rgba(47, 143, 131, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
-}
-
-.editor-add-button:active {
-  transform: translateY(0);
-  box-shadow: 
-    0 2px 4px rgba(47, 143, 131, 0.25),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-}
-
 .editor-section input:focus,
 .editor-section textarea:focus {
   border-color: var(--color-accent);
@@ -555,16 +338,30 @@ body {
   gap: 0.5rem;
 }
 
-/* Print styles */
+/* Toggle & add buttons (nice already) -------------------------- */
+
+.editor-toggle-label {
+  /* … keep as in your file … */
+}
+.editor-toggle-checkbox {
+  /* … keep … */
+}
+.editor-add-button {
+  /* … keep … */
+}
+
+/* Print: hide chrome, don't touch A4 size ---------------------- */
 
 @media print {
   body {
     margin: 0;
     padding: 0;
+    background: #ffffff;
   }
 
   .app-header,
-  .editor-panel {
+  .editor-panel,
+  .intro-backdrop {
     display: none !important;
   }
 
@@ -576,18 +373,7 @@ body {
   .preview-panel {
     padding: 0;
     box-shadow: none;
-  }
-
-  .preview-page {
-    box-shadow: none !important;
-    margin: 0;
-    width: auto;
-    min-height: auto;
-    padding: 0;
-  }
-
-  @page {
-    size: A4;
-    margin: 1.5cm;
+    justify-content: flex-start;
+    overflow: visible !important; /* ✅ no scrollbars in print */
   }
 }
