@@ -1,6 +1,6 @@
 # QuietCV
 
-_A calm little CV builder for people who don’t want shouting templates._
+A calm little CV builder for people who don’t want shouting templates.
 
 QuietCV is a minimal, bilingual (EN/DE) CV editor built with React.  
 It focuses on:

@@ -338,16 +338,61 @@ body {
   gap: 0.5rem;
 }
 
-/* Toggle & add buttons (nice already) -------------------------- */
+/* Toggle & add buttons ---------------------------------------- */
 
 .editor-toggle-label {
-  /* … keep as in your file … */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.5rem;
+  color: #4b5563;
+  cursor: pointer;
+  user-select: none;
 }
+
 .editor-toggle-checkbox {
-  /* … keep … */
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid #d1d5db;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ffffff;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
 }
+
+.editor-toggle-checkbox:checked {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.editor-toggle-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 2px;
+  background: #ffffff;
+}
+
 .editor-add-button {
-  /* … keep … */
+  margin-top: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.4rem;
+  border: 1px dashed #cbd5e1;
+  background: #f9fafb;
+  font-size: 0.78rem;
+  color: #475569;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.editor-add-button:hover {
+  border-style: solid;
+  background: #f3f4f6;
 }
 
 /* Print: hide chrome, don't touch A4 size ---------------------- */
@@ -356,9 +401,10 @@ body {
   body {
     margin: 0;
     padding: 0;
-    background: #ffffff;
+    font-size: 12px;
   }
 
+  /* hide header, editor and intro overlay when printing */
   .app-header,
   .editor-panel,
   .intro-backdrop {
@@ -370,10 +416,19 @@ body {
     padding: 0;
   }
 
+  /* let the preview take the full width, no shadow */
   .preview-panel {
+    width: 100%;
     padding: 0;
     box-shadow: none;
-    justify-content: flex-start;
-    overflow: visible !important; /* ✅ no scrollbars in print */
+    overflow: visible !important;
+  }
+
+  .preview-pages-container {
+    gap: 0;
+    align-items: stretch;
+    overflow: visible !important;
   }
 }
+
+/* no @page here – page size & inner margins are controlled in preview.css */
