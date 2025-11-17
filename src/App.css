@@ -4,27 +4,56 @@
     padding: 0;
   }
 
-  /* Hide editor when printing */
-  .editor-panel {
-    display: none;
+  /* Editor & Intro ausblenden */
+  .app-header,
+  .editor-panel,
+  .intro-backdrop {
+    display: none !important;
   }
 
-  /* Make preview full width for printing */
+  .app-layout {
+    display: block;
+    padding: 0;
+  }
+
+  /* Preview auf volle Breite ziehen */
   .preview-panel {
     width: 100%;
+    padding: 0;
     box-shadow: none;
+    overflow: visible !important;
+    justify-content: flex-start;
+    align-items: stretch;
   }
 
+  .preview-pages-container {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Eine „CV-Seite“ im PDF */
   .preview-page {
+    width: 210mm; /* A4-Breite */
+    min-height: 297mm; /* A4-Höhe */
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 10mm 15mm; /* Innenrand auf dem Blatt */
+    box-sizing: border-box;
     box-shadow: none;
-    width: auto;
-    min-height: auto;
-    padding: 1.4cm;
+    border-radius: 0;
+    page-break-inside: auto;
+    page-break-after: always;
+  }
+
+  .preview-page:last-child {
+    page-break-after: auto;
   }
 }
 
-/* Optional: set page size */
+/* physische Papierseite */
 @page {
   size: A4;
-  margin: 1.5cm;
+  margin: 0;
 }
